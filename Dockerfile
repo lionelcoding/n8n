@@ -10,7 +10,6 @@ RUN apk add --update graphicsmagick tzdata chromium xvfb && \
 # Set puppeteer environment variables
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
-ENV NODE_FUNCTION_ALLOW_EXTERNAL="puppeteer,puppeteer-extra,puppeteer-extra-plugin-stealth,puppeteer-extra-plugin-user-data-dir,puppeteer-extra-plugin-user-preferences,lodash,threads-api,chromium,chromium-browser,chrome,browserless,puppeteer-proxy,xvfb"
 
 # Set a custom user to not have n8n run as root
 USER root
