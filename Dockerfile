@@ -14,10 +14,9 @@ ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 # Set a custom user to not have n8n run as root
 USER root
 
-# Install n8n and also temporarily all the packages
-# it needs to build it correctly.
+# Install n8n and also temporarily all the packages it needs to build it correctly.
 RUN apk --update add --virtual build-dependencies python3 build-base && \
-    npm_config_user=root npm install --location=global n8n@${N8N_VERSION} browserless puppeteer lodash threads-api && \
+    npm_config_user=root npm install --location=global n8n@${N8N_VERSION} browserless puppeteer@21.9.0 lodash threads-api && \
     apk del build-dependencies
 
 # Install puppeteer extra plugins
